@@ -42,20 +42,12 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                sh '''
-                echo "Déploiement du WAR dans Tomcat..."
-
-                # Copier le WAR dans le dossier webapps de Tomcat
-                sudo cp target/my-appj.war /opt/tomcat/latest/webapps/
-
-                # Redémarrer Tomcat pour appliquer le déploiement
-                sudo systemctl restart tomcat
-
-                echo "Déploiement terminé avec succès !"
-                '''
+                sh 'sudo /usr/bin/cp target/*.war /opt/tomcat/latest/webapps/'
+                sh 'sudo /usr/bin/systemctl restart tomcat'
             }
         }
-    }
+
+    } // fin des stages
 
     post {
         success {
