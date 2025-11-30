@@ -1,16 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: wiki
-  Date: 29/11/2025
-  Time: 16:04
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<body>
+<h2>Welcome to my Java Web App!</h2>
+<p><a href="hello">Click here to call the servlet</a></p>
+</body>
 </html>
