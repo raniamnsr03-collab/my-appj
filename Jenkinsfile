@@ -8,6 +8,10 @@ pipeline {
 
     stages {
 
+        /***********************
+         * Checkout automatique
+         * (Pas besoin du stage Checkout)
+         ***********************/
 
         stage('Build WAR') {
             steps {
