@@ -8,11 +8,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
 
         stage('Build WAR') {
             steps {
@@ -42,8 +37,11 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                sh 'sudo /usr/bin/cp target/*.war /opt/tomcat/latest/webapps/'
-                sh 'sudo /usr/bin/systemctl restart tomcat'
+                sh '''
+                echo "Déploiement WAR vers Tomcat..."
+                sudo cp target/*.war /opt/tomcat/latest/webapps/
+                sudo systemctl restart tomcat
+                '''
             }
         }
 
